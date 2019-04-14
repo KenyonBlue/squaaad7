@@ -1,9 +1,7 @@
-
-
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { LoginManager } from 'react-native-fbsdk';
-
+// import { f, auth, storage, database } from './config/config';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -20,21 +18,10 @@ export default class App extends Component<Props> {
     })
   }
 
-  // _fbAuth() {
-  //   LoginManager.logInWithReadPermissions(['public_profile']).then(function(result) {
-  //     if (result.isCancelled) {
-  //       console.log("Login Cancelled");
-  //     } else {
-  //       console.log("Login Success permission granted:" + result.grantedPermissions);
-  //     }
-  //   }, function(error) {
-  //      console.log("some error occurred!!");
-  //   })
-  // }
-
   render() {
     return (
       <View style={styles.container}>
+      <Text>Squaaad Goals 7</Text>
         <TouchableOpacity onPress={this._fbAuth}>
         <Text> Facebook </Text>
         </TouchableOpacity>
