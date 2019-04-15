@@ -1,10 +1,33 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { LoginManager } from 'react-native-fbsdk';
-// import { f, auth, storage, database } from './config/config';
+import { f, auth } from './config/config';
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  constructor(props)
+  {
+    super(props);
+    this.registerUser('testemail2@email.com', 'bspassword');
+
+    f.auth().onAuthStateChanged(function(user) {
+      if(user) {
+        // logged in
+        console.log('logged in' , user);
+      } else {
+        // logged out
+        console.log('logged out');
+      }
+    })
+  }
+
+  registerUser = (email, password) => {
+    console.log(email, password);
+    auth.createUserWithEmailAndPassword(email, password)
+    .then((userObj) => console.log(email, password, userObj))
+    .catch((error) => console.log('error logging in', error));
+  }
 
   _fbAuth() {
     LoginManager.logInWithReadPermissions(['public_profile']).then(function(result){
