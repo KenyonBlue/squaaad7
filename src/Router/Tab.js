@@ -66,6 +66,9 @@ Profile: {
 const Config = {
     tabBarOptions: {
         showLabel: false
+    },
+    navigationOptions: {
+        header: null
     }
 };
 

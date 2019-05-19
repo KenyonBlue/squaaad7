@@ -1,16 +1,24 @@
-import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import React, { Component } from 'react';
+import {  StyleSheet, SafeAreaView  } from 'react-native';
+import { HomeHeader } from '../components';
+
+
 
  class Home extends Component {
   render() {
     return (
-      <View>
-        <Text> Home </Text>
-      </View>
+      <SafeAreaView>
+        <HomeHeader/>
+      </SafeAreaView>
     )
   }
 }
 
 export default Home;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create ({
+  container: {
+    flex: 1,
+    backgroundColor: 'white'
+  }
+})
